@@ -11,7 +11,6 @@ def load_model():
     config = PeftConfig.from_pretrained(peft_model_id, token=access_token)
     model = AutoModelForCausalLM.from_pretrained(
         config.base_model_name_or_path,
-        load_in_4bit = True,
         return_dict=True, 
         device_map='auto'
     )
@@ -23,7 +22,7 @@ def load_model():
     model.resize_token_embeddings(len(tokenizer))
     
     # Load the PEFT model
-    model = PeftModel.from_pretrained(model, peft_model_id, token = access_token)
+    model = PeftModel.from_pretrained(model, peft_model_id, token = access_token, offload_folder = 'offload')
     
     return model, tokenizer
 
