@@ -4,13 +4,14 @@ from peft import PeftModel, PeftConfig
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 # Load the model and tokenizer in a Streamlit cached function
-
+@st.cache_resource
 def load_model():
     access_token = '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'  # Replace with your Hugging Face access token
-    peft_model_id = "/content/dolphin"
+    peft_model_id = "sid0608/Story-Telling-Platform-1.0"
     config = PeftConfig.from_pretrained(peft_model_id, token=access_token)
     model = AutoModelForCausalLM.from_pretrained(
-        config.base_model_name_or_path, 
+        config.base_model_name_or_path,
+        load_in_4bit = True,
         return_dict=True, 
         device_map='auto'
     )
@@ -22,7 +23,7 @@ def load_model():
     model.resize_token_embeddings(len(tokenizer))
     
     # Load the PEFT model
-    model = PeftModel.from_pretrained(model, peft_model_id, offload_folder='offload')
+    model = PeftModel.from_pretrained(model, peft_model_id, token = access_token)
     
     return model, tokenizer
 
