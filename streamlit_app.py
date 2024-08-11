@@ -8,11 +8,7 @@ def load_model():
     access_token = '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'  # Replace with your Hugging Face access token
     peft_model_id = "sid0608/Story-Telling-Platform-1.0"
     config = PeftConfig.from_pretrained(peft_model_id, token=access_token)
-    model = AutoModelForCausalLM.from_pretrained(
-        config.base_model_name_or_path,
-        return_dict=True, 
-        device_map='auto'
-    )
+    model = AutoModelForCausalLM.from_pretrained(config.base_model_name_or_path, return_dict=True, device_map='auto')
     tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path)
     
     # Add custom tokens
