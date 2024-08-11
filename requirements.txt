@@ -3,4 +3,4 @@ peft
 datasets
 accelerate
 BitsAndBytes
-pytorch
+torch
