@@ -23,8 +23,9 @@ options = ["Romance", "Action", "Adventure", "Fantasy", "Humor", "Erotica", "Cri
 selected_option = st.selectbox("Choose an option:", options)
 
 # Display the selected option
-st.write(f"You selected: {selected_option}")
+prompt = prompt + " " + f"<genre>{selected_option}</genre>"
 
+st.write(prompt)
 if st.button("Generate Story"):
     if prompt:
         api_url = "https://8083-34-80-6-234.ngrok-free.app/generate/"  # Replace with your ngrok URL
