@@ -4,6 +4,7 @@ from peft import PeftModel, PeftConfig
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 # Load the model and tokenizer in a Streamlit cached function
+@st.cache_resource
 def load_model():
     access_token = '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'  # Replace with your Hugging Face access token
     peft_model_id = "sid0608/Story-Telling-Platform-1.0"
