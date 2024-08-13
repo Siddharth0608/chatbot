@@ -18,7 +18,7 @@ prompt = st.text_input("Enter your prompt:")
 
 if st.button("Generate Story"):
     if prompt:
-        api_url = "https://5c31-34-74-90-198.ngrok-free.app/"  # Replace with your ngrok URL
+        api_url = "https://ec15-35-199-3-102.ngrok-free.app/"  # Replace with your ngrok URL
         response = requests.post(api_url, json={"prompt": prompt})
         st.write(response.json()["generated_text"])
     else:
