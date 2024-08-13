@@ -7,7 +7,7 @@ import re
 # Load the model and tokenizer in a Streamlit cached function
 
 # Show title and description
-st.title("💬 Hugging Face Story Generator")
+st.title("💬 Story Generator 1.0")
 st.write(
     "This chatbot generates engaging stories based on your input using a custom-trained Hugging Face model."
 )
