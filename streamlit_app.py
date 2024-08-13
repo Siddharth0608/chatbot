@@ -16,6 +16,15 @@ st.write(
 # Create a session state variable to store the chat messages
 prompt = st.text_input("Enter your prompt:")
 
+# Define the options for the dropdown
+options = ["Option 1", "Option 2", "Option 3", "Option 4"]
+
+# Create the dropdown menu
+selected_option = st.selectbox("Choose an option:", options)
+
+# Display the selected option
+st.write(f"You selected: {selected_option}")
+
 if st.button("Generate Story"):
     if prompt:
         api_url = "https://8083-34-80-6-234.ngrok-free.app/generate/"  # Replace with your ngrok URL
