@@ -17,7 +17,7 @@ st.write(
 prompt = st.text_input("Enter your prompt:")
 
 # Define the options for the dropdown
-options = ["Option 1", "Option 2", "Option 3", "Option 4"]
+options = ["Romance", "Action", "Adventure", "Fantasy", "Humor", "Erotica", "Crime", "Comics", "Horror", "Paranomal", "Inspirational", "Children", "Historical", "Poetry", "Drama", "Science Fiction", "Scripts-Screenplays", "Thirller-Mystery"]
 
 # Create the dropdown menu
 selected_option = st.selectbox("Choose an option:", options)
