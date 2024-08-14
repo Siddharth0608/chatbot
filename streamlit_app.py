@@ -9,7 +9,9 @@ import re
 # Show title and description
 st.title("💬 Story Generator 1.0")
 st.write(
-    "This chatbot generates engaging stories based on your input using a custom-trained Hugging Face model."
+    "This Large Language Model generates engaging stories based on your input using Fine-Tuned Dolphin 2  model."
+    "The model is currently in the testing phase and may behave unpredictably at times."
+    "The main reason behind this test is to understand the relationship between the training data and the model's output."
 )
 
 
@@ -20,7 +22,7 @@ prompt = st.text_input("Enter your prompt:")
 options = ["Romance", "Action", "Adventure", "Fantasy", "Humor", "Erotica", "Crime", "Comics", "Horror", "Paranomal", "Inspirational", "Children", "Historical", "Poetry", "Drama", "Science Fiction", "Scripts-Screenplays", "Thirller-Mystery"]
 
 # Create the dropdown menu
-selected_option = st.selectbox("Choose an option:", options)
+selected_option = st.selectbox("Choose a Genre:", options)
 
 # Display the selected option
 prompt = prompt + " " + f"<genre>{selected_option}</genre>"
@@ -28,7 +30,7 @@ prompt = prompt + " " + f"<genre>{selected_option}</genre>"
 
 if st.button("Generate Story"):
     if prompt:
-        api_url = "https://5237-35-229-251-181.ngrok-free.app/generate/"  # Replace with your ngrok URL
+        api_url = "https://0b7d-34-143-212-144.ngrok-free.app/generate/"  # Replace with your ngrok URL
         response = requests.post(api_url, json={"prompt": prompt})
         match = re.search(r"(?:assistant\s+.*?){2}(.*)", response.json()["generated_text"], re.DOTALL)
         assistant_output = match.group(1).strip()
