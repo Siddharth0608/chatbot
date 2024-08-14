@@ -9,8 +9,8 @@ import re
 # Show title and description
 st.title("💬 Story Generator 1.0")
 st.write(
-    "This Large Language Model generates engaging stories based on your input using Fine-Tuned Dolphin 2  model."
-    "The model is currently in the testing phase and may behave unpredictably at times."
+    "This Large Language Model generates engaging stories based on your input using Fine-Tuned Dolphin 2  model./n"
+    "The model is currently in the testing phase and may behave unpredictably at times./n"
     "The main reason behind this test is to understand the relationship between the training data and the model's output."
 )
 
