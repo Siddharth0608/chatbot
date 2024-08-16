@@ -30,7 +30,7 @@ prompt = prompt + " " + f"<genre>{selected_option}</genre>"
 
 if st.button("Generate Story"):
     if prompt:
-        api_url = "https://9da3-34-34-65-55.ngrok-free.app/generate/"  # Replace with your ngrok URL
+        api_url = "https://bb96-34-142-179-254.ngrok-free.app/generate/"  # Replace with your ngrok URL
         response = requests.post(api_url, json={"prompt": prompt})
         match = re.search(r"(?:assistant\s+.*?){2}(.*)", response.json()["generated_text"], re.DOTALL)
         assistant_output = match.group(1).strip()
