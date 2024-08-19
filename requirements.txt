@@ -1,7 +1,2 @@
 streamlit
-peft
-datasets
-accelerate
-BitsAndBytes
-torch
 requests
