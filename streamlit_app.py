@@ -1,7 +1,4 @@
 import streamlit as st
-import torch
-from peft import PeftModel, PeftConfig
-from transformers import AutoModelForCausalLM, AutoTokenizer
 import requests
 import re
 # Load the model and tokenizer in a Streamlit cached function
